@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: dbt_db
+    description: 'sample table in demo_dbt database.'
+    database: dbt_db
+    schema: dbt_schema
+    tables: 
+      - name: orders
+        discription: 'detials about all orders put by customers.'

@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: DBT_DB
+    database: DBT_DB  
+    schema: DBT_SCHEMA
+    tables:
+      - name: orders
+      - name: customers
