@@ -9,7 +9,7 @@ with
 
 orderDetails as (
     --select * from {{ ref('example_teams') }}
-    select * from {{ source("DBT_DB","orders") }}
+    select * from {{ source('DBT_DB','orders') }}
 
     {% if is_incremental() %}
 
@@ -20,7 +20,18 @@ orderDetails as (
 
 final as (
 
-    select * from orderDetails
+    --select * from orderDetails
+    select
+        OrderID,
+        OrderDate,
+        CustomerID,
+        EmployeeID,
+        StoreID,
+        Status,
+        Updated_at,
+        '{{ invocation_id }}' as batch_id
+
+    from orderDetails
 )
 
 select * from final
