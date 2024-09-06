@@ -1,5 +1,7 @@
 /* Snapshot : order_snapshot  */
-{% snapshot orders_snapshot %}
+{% snapshot orders
+
+ %}
 
 {{
     config(
